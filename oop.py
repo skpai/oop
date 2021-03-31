@@ -10,6 +10,11 @@ class Zoo :
     def dosomething(self):
         for l in self.liste:
             print(l.dosomething(), end=",")
+    def __add__(self, other):
+        if isinstance(other, Zoo):
+            return self.liste+other.liste
+        else:
+            return None
 
 
 class Animal: 
@@ -55,4 +60,5 @@ z.dosomething()
 print(z)
 z.add_animal(a)
 print(z)
+print(z+z)
 
