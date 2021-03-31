@@ -64,3 +64,4 @@ z.add_animal(a)
 print(z)
 print(z+z)
 
+b= Animal('c')

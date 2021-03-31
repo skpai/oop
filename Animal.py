@@ -1,7 +1,7 @@
 class Animal: 
     def __init__(self, animal_type): 
         if len(animal_type) < 2:
-            raise ValueError("...")
+            raise ValueError("Get the full name")
         self.animal_type=animal_type 
     
     def __str__(self):
