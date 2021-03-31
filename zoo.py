@@ -5,7 +5,7 @@ class Zoo :
         return ''.join([l.animal_type+" " for l in self.liste])
 
     def add_animal(self, a):
-        return self.liste.append(a)
+        return Zoo(self.liste.append(a))
 
     def dosomething(self):
         for l in self.liste:
