@@ -1,11 +1,6 @@
 class Zoo : 
     def __init__(self, liste): 
         self.liste=liste 
-    def get_x(self):
-        return self.__liste
-
-    def set_x(self, liste):
-        self.__liste = liste
     def __str__(self):
         return ''.join([l.animal_type+" " for l in self.liste])
 
@@ -16,12 +11,10 @@ class Zoo :
         for l in self.liste:
             print(l.dosomething(), end=",")
     def __add__(self, other):
-        z=Zoo([])
         if isinstance(other, Zoo):
-            z.set(self.liste+other.liste)
-            retutn z
+            return Zoo(self.liste+other.liste)
         else:
-            print("Error")
+            return None
 
 
 class Animal: 

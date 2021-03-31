@@ -5,13 +5,13 @@ class Zoo :
         return ''.join([l.animal_type+" " for l in self.liste])
 
     def add_animal(self, a):
-        return Zoo(self.liste.append(a))
+        return self.liste.append(a)
 
     def dosomething(self):
         for l in self.liste:
             print(l.dosomething(), end=",")
     def __add__(self, other):
         if isinstance(other, Zoo):
-            return self.liste+other.liste
+            return Zoo(self.liste+other.liste)
         else:
             return None
