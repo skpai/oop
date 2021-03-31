@@ -18,11 +18,12 @@ class Zoo :
 
 
 class Animal: 
-    def __init__(self, animal_type): 
-        if len(animal_type) < 2:
-            raise ValueError("...")
+    def __init__(self, animal_type, weight, height): 
+        if weight <=0:
+            raise ValueError("Get the full name")
+        self.weight=weight
+        self.height=height
         self.animal_type=animal_type 
-    
     def __str__(self):
         return self.animal_type
     def se_deplacer(self):
@@ -32,7 +33,10 @@ class Animal:
     def dosomething(self):
         print("something")
 
-class Serpent (Animal):  
+class Serpent (Animal):
+    def __init__(self):
+        super().__init__()
+        self.animal_type="Serpent" 
     def __str__(self):
         return self.animal_type          
     def se_deplacer(self):
@@ -40,6 +44,9 @@ class Serpent (Animal):
         return None
 
 class Oiseau(Animal):
+    def __init__(self):
+        super().__init__()
+        self.animal_type="Oiseau" 
     def __str__(self):
         return self.animal_type         
     def se_deplacer(self):
@@ -49,11 +56,11 @@ class Oiseau(Animal):
     def dosomething(self):
         super().dosomething() 
 
-a = Animal('cat')
+a = Animal("cat", 10,10)
 a.se_deplacer()
-s=Serpent("Serpent")
+s=Serpent("snake", 10,10)
 s.se_deplacer()
-o=Oiseau("Oiseau")
+o=Oiseau("bird", 10,10)
 o.se_deplacer()
 o.dosomething()
 print(o.altitude_max())
