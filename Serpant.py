@@ -1,3 +1,4 @@
+from Animal import Animal
 class Serpent (Animal):
     _animal_type="Serpent"        
     def __str__(self):
